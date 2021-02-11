@@ -1,0 +1,15 @@
+/* flex-direction: row 일 때 justify-content는 가로 방향이지만
+   flex-direction: column이 되면 세로 방향 */
+   
+/* justify-content는 가로, align-itemts는 세로 */
+
+.section {
+    background-color: cadetblue;
+    width: 50%;
+    height: 500px;
+    margin: 0 auto;
+}
+
+button {
+    margin: 10px auto;
+}
