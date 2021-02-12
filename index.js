@@ -4,9 +4,6 @@ var tableRow = document.getElementById("tableRow");
 var addBtn = document.querySelector(".optionAddBtn"),
     delBtn = document.querySelector(".optionDelBtn");
 
-let idNumbers = 1,
-    rows = [];
-
 function addRow() {
     addBtn.addEventListener('click', function () {
         var rowCount = tableRow.rows.length;
