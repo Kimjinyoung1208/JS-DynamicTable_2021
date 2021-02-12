@@ -1,11 +1,20 @@
-var tableRow = document.getElementById("tableRow");
-// 해당 아이디의 요소 선택
+const tableRow = document.getElementById("tableRow");
 
-var addBtn = document.querySelector(".optionAddBtn"),
-    delBtn = document.querySelector(".optionDelBtn");
+const opAddBtn = document.querySelector(".optionAddBtn"),
+    opDelBtn = document.querySelector(".optionDelBtn");
+
+const itemRow = tableRow.querySelector("tr td:nth-child(1)"),
+    itemContent = itemRow.getElementsByTagName("input");
+
+// const itAddBtn = document.querySelector(".itemAddBtn");
+
+const showBtn = document.querySelector(".showBtn"),
+    hideBtn = document.querySelector(".hideBtn"),
+    toggleBtn = document.querySelector(".toggleBtn"),
+    section = document.querySelector(".section");
 
 function addRow() {
-    addBtn.addEventListener('click', function () {
+    opAddBtn.addEventListener('click', function () {
         var rowCount = tableRow.rows.length;
         if (rowCount < 10) {
             var row = tableRow.insertRow(rowCount);
@@ -22,7 +31,7 @@ function addRow() {
 }
 
 function delRow() {
-    delBtn.addEventListener('click', function () {
+    opDelBtn.addEventListener('click', function () {
         var rowCount = tableRow.rows.length;
         for (var i = 0; i < rowCount; i++) {
             var row = tableRow.rows[i];
@@ -40,8 +49,41 @@ function delRow() {
     });
 }
 
+// function addItem() {
+//     itAddBtn.addEventListener('click', function () {
+//         var div = itemRow.createElement("div");
+//         div.appendChild(itemContent);
+//     });
+// }
+
+function show() {
+    showBtn.addEventListener('click', function () {
+        section.style.display = "block"
+    });
+}
+
+function hide() {
+    hideBtn.addEventListener('click', function () {
+        section.style.display = "none"
+    });
+}
+
+function toggle() {
+    toggleBtn.addEventListener('click', function () {
+        if (section.style.display === "none") {
+            section.style.display = "block";
+        } else {
+            section.style.display = "none";
+        }
+    });
+}
+
 function init() {
     addRow();
     delRow();
+    // addItem();
+    show();
+    hide();
+    toggle();
 }
 init();
